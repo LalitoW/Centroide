@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.SizeBox = new System.Windows.Forms.TextBox();
             this.DrawButton = new System.Windows.Forms.Button();
             this.RSTButton = new System.Windows.Forms.Button();
             this.ResizeButton = new System.Windows.Forms.Button();
@@ -52,14 +54,22 @@
             this.textBoxX1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.SizeBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.buttonCentre = new System.Windows.Forms.Button();
+            this.buttonUp = new System.Windows.Forms.Button();
+            this.buttonDown = new System.Windows.Forms.Button();
+            this.buttonRight = new System.Windows.Forms.Button();
+            this.buttonLeft = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonLeft);
+            this.groupBox1.Controls.Add(this.buttonRight);
+            this.groupBox1.Controls.Add(this.buttonDown);
+            this.groupBox1.Controls.Add(this.buttonUp);
+            this.groupBox1.Controls.Add(this.buttonCentre);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.SizeBox);
             this.groupBox1.Controls.Add(this.DrawButton);
@@ -86,15 +96,33 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(407, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 400);
+            this.groupBox1.Size = new System.Drawing.Size(450, 422);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quadrilateral data";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(51, 275);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(121, 20);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Resize to scale:";
+            // 
+            // SizeBox
+            // 
+            this.SizeBox.Location = new System.Drawing.Point(178, 272);
+            this.SizeBox.Name = "SizeBox";
+            this.SizeBox.Size = new System.Drawing.Size(100, 26);
+            this.SizeBox.TabIndex = 22;
+            this.SizeBox.Text = "1";
+            this.SizeBox.TextChanged += new System.EventHandler(this.SizeBox_TextChanged);
+            // 
             // DrawButton
             // 
-            this.DrawButton.Location = new System.Drawing.Point(178, 151);
+            this.DrawButton.Location = new System.Drawing.Point(55, 151);
             this.DrawButton.Name = "DrawButton";
             this.DrawButton.Size = new System.Drawing.Size(75, 36);
             this.DrawButton.TabIndex = 21;
@@ -104,7 +132,7 @@
             // 
             // RSTButton
             // 
-            this.RSTButton.Location = new System.Drawing.Point(203, 358);
+            this.RSTButton.Location = new System.Drawing.Point(334, 151);
             this.RSTButton.Name = "RSTButton";
             this.RSTButton.Size = new System.Drawing.Size(86, 36);
             this.RSTButton.TabIndex = 20;
@@ -157,6 +185,7 @@
             this.textBoxY3.Name = "textBoxY3";
             this.textBoxY3.Size = new System.Drawing.Size(100, 26);
             this.textBoxY3.TabIndex = 15;
+            this.textBoxY3.Text = "100";
             this.textBoxY3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxY3_KeyPress);
             // 
             // label7
@@ -174,6 +203,7 @@
             this.textBoxX3.Name = "textBoxX3";
             this.textBoxX3.Size = new System.Drawing.Size(100, 26);
             this.textBoxX3.TabIndex = 13;
+            this.textBoxX3.Text = "100";
             this.textBoxX3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX3_KeyPress);
             // 
             // label8
@@ -191,6 +221,7 @@
             this.textBoxY2.Name = "textBoxY2";
             this.textBoxY2.Size = new System.Drawing.Size(100, 26);
             this.textBoxY2.TabIndex = 11;
+            this.textBoxY2.Text = "100";
             this.textBoxY2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxY2_KeyPress);
             // 
             // label5
@@ -208,6 +239,7 @@
             this.textBoxX2.Name = "textBoxX2";
             this.textBoxX2.Size = new System.Drawing.Size(100, 26);
             this.textBoxX2.TabIndex = 9;
+            this.textBoxX2.Text = "0";
             this.textBoxX2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX2_KeyPress);
             // 
             // label6
@@ -225,6 +257,7 @@
             this.textBoxY4.Name = "textBoxY4";
             this.textBoxY4.Size = new System.Drawing.Size(100, 26);
             this.textBoxY4.TabIndex = 7;
+            this.textBoxY4.Text = "0";
             this.textBoxY4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxY4_KeyPress);
             // 
             // label3
@@ -242,6 +275,7 @@
             this.textBoxX4.Name = "textBoxX4";
             this.textBoxX4.Size = new System.Drawing.Size(100, 26);
             this.textBoxX4.TabIndex = 5;
+            this.textBoxX4.Text = "100";
             this.textBoxX4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX4_KeyPress);
             // 
             // label4
@@ -259,6 +293,7 @@
             this.textBoxY1.Name = "textBoxY1";
             this.textBoxY1.Size = new System.Drawing.Size(100, 26);
             this.textBoxY1.TabIndex = 3;
+            this.textBoxY1.Text = "0";
             this.textBoxY1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBoxY1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxY1_KeyPress);
             // 
@@ -278,6 +313,7 @@
             this.textBoxX1.Name = "textBoxX1";
             this.textBoxX1.Size = new System.Drawing.Size(100, 26);
             this.textBoxX1.TabIndex = 1;
+            this.textBoxX1.Text = "0";
             this.textBoxX1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBoxX1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX1_KeyPress);
             // 
@@ -301,23 +337,55 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
-            // SizeBox
+            // buttonCentre
             // 
-            this.SizeBox.Location = new System.Drawing.Point(178, 272);
-            this.SizeBox.Name = "SizeBox";
-            this.SizeBox.Size = new System.Drawing.Size(100, 26);
-            this.SizeBox.TabIndex = 22;
-            this.SizeBox.Text = "1";
-            this.SizeBox.TextChanged += new System.EventHandler(this.SizeBox_TextChanged);
+            this.buttonCentre.Location = new System.Drawing.Point(295, 322);
+            this.buttonCentre.Name = "buttonCentre";
+            this.buttonCentre.Size = new System.Drawing.Size(124, 36);
+            this.buttonCentre.TabIndex = 24;
+            this.buttonCentre.Text = "Move centre";
+            this.buttonCentre.UseVisualStyleBackColor = true;
+            this.buttonCentre.Click += new System.EventHandler(this.buttonCentre_Click);
             // 
-            // label10
+            // buttonUp
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(51, 275);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 20);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Resize to scale:";
+            this.buttonUp.Location = new System.Drawing.Point(97, 304);
+            this.buttonUp.Name = "buttonUp";
+            this.buttonUp.Size = new System.Drawing.Size(75, 36);
+            this.buttonUp.TabIndex = 25;
+            this.buttonUp.Text = "Up";
+            this.buttonUp.UseVisualStyleBackColor = true;
+            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
+            // 
+            // buttonDown
+            // 
+            this.buttonDown.Location = new System.Drawing.Point(97, 364);
+            this.buttonDown.Name = "buttonDown";
+            this.buttonDown.Size = new System.Drawing.Size(75, 36);
+            this.buttonDown.TabIndex = 26;
+            this.buttonDown.Text = "Down";
+            this.buttonDown.UseVisualStyleBackColor = true;
+            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
+            // 
+            // buttonRight
+            // 
+            this.buttonRight.Location = new System.Drawing.Point(178, 337);
+            this.buttonRight.Name = "buttonRight";
+            this.buttonRight.Size = new System.Drawing.Size(75, 36);
+            this.buttonRight.TabIndex = 27;
+            this.buttonRight.Text = "Right";
+            this.buttonRight.UseVisualStyleBackColor = true;
+            this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
+            // 
+            // buttonLeft
+            // 
+            this.buttonLeft.Location = new System.Drawing.Point(16, 337);
+            this.buttonLeft.Name = "buttonLeft";
+            this.buttonLeft.Size = new System.Drawing.Size(75, 36);
+            this.buttonLeft.TabIndex = 28;
+            this.buttonLeft.Text = "Left";
+            this.buttonLeft.UseVisualStyleBackColor = true;
+            this.buttonLeft.Click += new System.EventHandler(this.buttonLeft_Click);
             // 
             // Form1
             // 
@@ -364,6 +432,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox SizeBox;
+        private System.Windows.Forms.Button buttonDown;
+        private System.Windows.Forms.Button buttonUp;
+        private System.Windows.Forms.Button buttonCentre;
+        private System.Windows.Forms.Button buttonLeft;
+        private System.Windows.Forms.Button buttonRight;
     }
 }
 

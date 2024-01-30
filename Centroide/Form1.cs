@@ -217,6 +217,58 @@ namespace Centroide
 
         }
 
+        private void buttonUp_Click(object sender, EventArgs e)
+        {
+            a = new PointF(a.X, a.Y + 1);
+            b = new PointF(b.X, b.Y + 1);
+            c = new PointF(c.X, c.Y + 1);
+            d = new PointF(d.X, d.Y + 1);
+
+            Render(g);
+
+        }
+
+        private void buttonDown_Click(object sender, EventArgs e)
+        {
+            a = new PointF(a.X, a.Y - 1);
+            b = new PointF(b.X, b.Y - 1);
+            c = new PointF(c.X, c.Y - 1);
+            d = new PointF(d.X, d.Y - 1);
+
+            Render(g);
+        }
+
+        private void buttonLeft_Click(object sender, EventArgs e)
+        {
+            a = new PointF(a.X - 1, a.Y);
+            b = new PointF(b.X - 1, b.Y);
+            c = new PointF(c.X - 1, c.Y);
+            d = new PointF(d.X - 1, d.Y);
+
+            Render(g);
+        }
+
+        private void buttonRight_Click(object sender, EventArgs e)
+        {
+            a = new PointF(a.X + 1, a.Y);
+            b = new PointF(b.X + 1, b.Y);
+            c = new PointF(c.X + 1, c.Y);
+            d = new PointF(d.X + 1, d.Y);
+
+            Render(g);
+        }
+
+        private void buttonCentre_Click(object sender, EventArgs e)
+        {
+            
+            a = new PointF((a.X / 2) - a.X, (a.Y / 2) - a.Y);
+            b = new PointF((b.X / 2) - b.X, (b.Y / 2) - b.Y);
+            c = new PointF((c.X / 2) - c.X, (c.Y / 2) - c.Y);
+            d = new PointF((d.X / 2) - d.X, (d.Y / 2) - d.Y);
+
+            Render(g);
+        }
+
         private void textBoxY4_KeyPress(object sender, KeyPressEventArgs e)
         {
 
